@@ -1,0 +1,18 @@
+#create your own configuration file for kismet 
+sudo nano /usr/local/etc/kismet_site.conf
+
+
+#Enter these 2 lines. The lines tell kismet to use mon1 interface as data source for wireless connections and also use hci0 interface as data source for monitoring Bluetooth network;
+
+source=mon1
+source=hci0
+
+ 
+
+#To connect to ksimets web interface we need to find out our ip address;
+
+hostname -I
+
+ 
+#We now proceed to start up kismet server so we acces it through web;
+Kismet -c mon1

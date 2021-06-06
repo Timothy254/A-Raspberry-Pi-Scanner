@@ -1,0 +1,15 @@
+
+#modify our interfaces 
+
+sudo nano /etc/network/interfaces
+
+
+#We add the following to the file.
+
+allow-hotplug wlan0
+iface wlan0 inet manual
+pre-up iw phy phy0 interface add mon1 type monitor
+pre-up iw dev wlan0 del
+pre-up ifconfig mon1 up
+
+

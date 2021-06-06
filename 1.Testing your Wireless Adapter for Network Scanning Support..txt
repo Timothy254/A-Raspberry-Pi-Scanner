@@ -1,0 +1,10 @@
+#First update
+
+sudo apt-get update
+sudo apt-get upgrade
+
+#Check the name interface your device is using
+iw dev
+
+#Check if it supports monitor mode
+iw phy phy0 info

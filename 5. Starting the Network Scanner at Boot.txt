@@ -1,0 +1,28 @@
+#We first copy the service into the systemd folder;
+
+sudo cp /home/pi/kismet/packaging/systemd/kismet.service /lib/systemd/system/
+
+
+# add some changes so that it uses the pi user rather than root user
+
+sudo systemctl edit kismet
+
+#Enter the following to override the default settings then save and exit;
+
+[Service]
+User=pi
+Group=kismet
+
+ 
+
+#We then enable the service file.
+
+sudo systemctl start kismet
+
+
+#Once started we can check on its status 
+
+sudo systemctl status kismet
+
+
+
